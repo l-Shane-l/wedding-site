@@ -5,10 +5,10 @@ module MainPage
   )
 where
 
+import Layout
 import Lucid
-import Templates.Layout
 
 mainPage :: Html ()
-mainPage = baseTemplate $ do
+mainPage = Layout.layout $ do
   h1_ "Wedding Information"
   p_ "Welcome to our wedding! Here's all the information you need."

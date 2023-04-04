@@ -6,7 +6,7 @@ import Layout
 import Lucid
 
 transportationPage :: Html ()
-transportationPage = baseTemplate $ do
+transportationPage = Layout.layout $ do
   h1_ "Transportation"
   p_ $ do
     "Transportation information here."

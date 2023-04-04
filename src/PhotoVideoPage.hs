@@ -2,12 +2,12 @@
 
 module PhotoVideoPage where
 
+import Layout
 import Lucid
-import Templates.Layout
 
 -- Define our photo and video page.
 photoVideoPage :: Html ()
 photoVideoPage =
-  baseTemplate $ do
+  Layout.layout $ do
     h1_ "Photo and Video Upload"
     p_ "Photo and video upload instructions here."

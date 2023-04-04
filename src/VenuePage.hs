@@ -6,7 +6,7 @@ import Layout
 import Lucid
 
 venuePage :: Html ()
-venuePage = baseTemplate $ do
+venuePage = Layout.layout $ do
   h1_ "Venue Information"
   div_ [class_ "row"] $ do
     div_ [class_ "col s12 m6"] $ do

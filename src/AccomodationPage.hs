@@ -6,8 +6,8 @@ import qualified Layout
 import Lucid
 
 -- Define our accommodation page.
-accommodationPage :: Html ()
-accommodationPage =
-  Layout.baseTemplate $ do
-    h1_ "Accommodation Information"
-    p_ "Accommodation details here."
+accomodationPage :: Html ()
+accomodationPage =
+  Layout.layout $ do
+    h1_ "Accomodation Information"
+    p_ "Accomodation details here."
