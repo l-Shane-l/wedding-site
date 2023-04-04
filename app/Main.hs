@@ -2,17 +2,15 @@
 
 import Lucid
 import Network.HTTP.Types.Status (unauthorized401)
-import qualified Templates.Accommodation as Accommodation
-import qualified Templates.Footer as Footer
-import qualified Templates.Gifts as Gifts
-import qualified Templates.GuestBook as GuestBook
-import qualified Templates.Header as Header
-import qualified Templates.Index as Index
-import qualified Templates.Main as Main
-import qualified Templates.PhotoVideo as PhotoVideo
-import qualified Templates.Programme as Programme
-import qualified Templates.Transportation as Transportation
-import qualified Templates.Venue as Venue
+import qualified Templates.AccommodationPage as AccommodationPage
+import qualified Templates.GiftsPage as GiftsPage
+import qualified Templates.GuestBookPage as GuestBookPage
+import qualified Templates.Layout as Layout
+import qualified Templates.LoginPage as LoginPage
+import qualified Templates.MainPage as MainPage
+import qualified Templates.PhotosVideoPage as PhotosVideoPage
+import qualified Templates.TransportationPage as TransportationPage
+import qualified Templates.VenuePage as VenuePage
 import Web.Scotty
 
 main :: IO ()
