@@ -42,11 +42,13 @@ library
   build-depends:
       base >=4.7 && <5
     , cookie
+    , filepath
     , http-types
     , lucid
     , mtl
     , scotty
     , text
+    , wai-middleware-static
   default-language: Haskell2010
 
 executable my-wedding-app-exe
@@ -59,12 +61,14 @@ executable my-wedding-app-exe
   build-depends:
       base >=4.7 && <5
     , cookie
+    , filepath
     , http-types
     , lucid
     , mtl
     , my-wedding-app
     , scotty
     , text
+    , wai-middleware-static
   default-language: Haskell2010
 
 test-suite my-wedding-app-test
@@ -78,10 +82,12 @@ test-suite my-wedding-app-test
   build-depends:
       base >=4.7 && <5
     , cookie
+    , filepath
     , http-types
     , lucid
     , mtl
     , my-wedding-app
     , scotty
     , text
+    , wai-middleware-static
   default-language: Haskell2010

@@ -11,13 +11,17 @@ import LoginPage (failedLoginPage, loginPage)
 import qualified Lucid as L
 import MainPage (mainPage)
 import Network.HTTP.Types.Status (unauthorized401)
+import Network.Wai.Middleware.Static (addBase, noDots, staticPolicy, (>->))
 import PhotoVideoPage (photoVideoPage)
+import System.FilePath ((</>))
 import TransportationPage (transportationPage)
 import VenuePage (venuePage)
 import Web.Scotty
 
 main :: IO ()
 main = scotty 3000 $ do
+  middleware $ staticPolicy (noDots >-> addBase "static")
+
   get "/" $ html $ L.renderText $ Layout.layout loginPage
 
   post "/login" $ do

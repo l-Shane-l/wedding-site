@@ -27,6 +27,8 @@ dependencies:
 - http-types
 - lucid
 - mtl
+- wai-middleware-static
+- filepath
 
 ghc-options:
 - -Wall
