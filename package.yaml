@@ -25,6 +25,7 @@ dependencies:
 - text
 - cookie
 - http-types
+- lucid
 
 ghc-options:
 - -Wall
