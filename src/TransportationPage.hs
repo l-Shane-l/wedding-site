@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Templates.TransportationPage where
+module TransportationPage where
 
 import Layout
 import Lucid

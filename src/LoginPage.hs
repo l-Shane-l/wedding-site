@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Templates.Login where
+module LoginPage where
 
 import Lucid
 import qualified Templates.Layout as Layout

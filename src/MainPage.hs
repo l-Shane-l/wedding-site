@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Templates.MainPage
+module MainPage
   ( mainPage,
   )
 where

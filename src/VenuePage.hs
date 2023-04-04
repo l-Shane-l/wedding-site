@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Templates.VenuePage where
+module VenuePage where
 
 import Layout
 import Lucid

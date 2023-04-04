@@ -1,6 +1,8 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-import Lucid
+module Main where
+
+import qualified Lucid as L
 import Network.HTTP.Types.Status (unauthorized401)
 import qualified Templates.AccommodationPage as AccommodationPage
 import qualified Templates.GiftsPage as GiftsPage
@@ -15,34 +17,34 @@ import Web.Scotty
 
 main :: IO ()
 main = scotty 3000 $ do
-  get "/" $ lucid Index.indexPage
+  get "/" $ html $ L.renderText $ Layout.baseTemplate "Our Wedding" LoginPage.loginPage
 
   post "/login" $ do
-    password <- param "password" :: ActionM Text
-    if password == "guest123" -- replace with actual password list or check
+    password <- param "password" :: ActionM L.Text
+    if password == "guest123"
       then do
         setHeader "Set-Cookie" "password=guest123; Path=/; HttpOnly"
         redirect "/main"
       else redirect "/failed-login"
 
-  get "/failed-login" $ lucid Index.failedLoginPage
+  get "/failed-login" $ html $ L.renderText $ Layout.baseTemplate "Login Failed" LoginPage.failedLoginPage
 
-  get "/main" $ checkAuth $ lucid Main.mainPage
-  get "/programme" $ checkAuth $ lucid Programme.programmePage
-  get "/venue" $ checkAuth $ lucid Venue.venuePage
-  get "/accommodation" $ checkAuth $ lucid Accommodation.accommodationPage
-  get "/gifts" $ checkAuth $ lucid Gifts.giftsPage
-  get "/photos" $ checkAuth $ lucid PhotoVideo.photoVideoPage
-  get "/guestbook" $ checkAuth $ lucid GuestBook.guestBookPage
-  get "/transportation" $ checkAuth $ lucid Transportation.transportationPage
+  get "/main" $ checkAuth $ html $ L.renderText $ Layout.baseTemplate "Wedding Information" MainPage.mainPage
+  get "/programme" $ checkAuth $ html $ L.renderText $ Layout.baseTemplate "Programme" MainPage.mainPage
+  get "/venue" $ checkAuth $ html $ L.renderText $ Layout.baseTemplate "Venue Information" VenuePage.venuePage
+  get "/accommodation" $ checkAuth $ html $ L.renderText $ Layout.baseTemplate "Accommodation Information" AccommodationPage.accommodationPage
+  get "/gifts" $ checkAuth $ html $ L.renderText $ Layout.baseTemplate "Gifts" GiftsPage.giftsPage
+  get "/photos" $ checkAuth $ html $ L.renderText $ Layout.baseTemplate "Photo and Video Upload" PhotosVideoPage.photosVideoPage
+  get "/guestbook" $ checkAuth $ html $ L.renderText $ Layout.baseTemplate "Guest Book" GuestBookPage.guestBookPage
+  get "/transportation" $ checkAuth $ html $ L.renderText $ Layout.baseTemplate "Transportation" TransportationPage.transportationPage
 
 checkAuth :: ActionM () -> ActionM ()
 checkAuth action = do
   maybeCookie <- header "Cookie"
   case maybeCookie of
     Just cookie ->
-      if "password=guest123" `elem` words (unpack cookie) -- replace with actual password list or check
+      if "password=guest123" `elem` words (L.unpack cookie)
         then action
-        else status unauthorized401 >> lucid Index.unauthorizedPage
+        else status unauthorized401 >> text "Unauthorized access."
     Nothing ->
-      status unauthorized401 >> lucid Index.unauthorizedPage
+      status unauthorized401 >> text "Unauthorized access."

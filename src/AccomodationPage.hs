@@ -1,9 +1,9 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Templates.AccommodationPage where
+module AccomodationPage where
 
+import qualified Layout
 import Lucid
-import qualified Templates.Layout as Layout
 
 -- Define our accommodation page.
 accommodationPage :: Html ()

@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Templates.Layout where
+module Layout where
 
 import Lucid
 
@@ -26,4 +26,4 @@ layout page = doctypehtml_ $ do
           li_ $ a_ [href_ "/guestbook"] "Guest Book"
           li_ $ a_ [href_ "/transportation"] "Transportation"
     div_ [class_ "container"] page
-    script_ [src_ "/js/materialize.min.js"] ""
+    script_ [src_ "/js/materialize.min.js"] ("" :: String)

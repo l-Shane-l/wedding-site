@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Templates.GiftsPage where
+module GiftsPage where
 
 import Layout
 import Lucid

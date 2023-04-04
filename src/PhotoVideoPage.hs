@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Templates.PhotosVideoPage where
+module PhotoVideoPage where
 
 import Lucid
 import Templates.Layout

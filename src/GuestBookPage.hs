@@ -1,9 +1,9 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Templates.GuestBookPage where
+module GuestBookPage where
 
+import Layout
 import Lucid
-import Templates.Layout
 
 -- Define our guest book page.
 guestBookPage :: Html ()
