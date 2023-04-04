@@ -1,11 +1,12 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Layout where
+module Layout (layout) where
 
+import Control.Monad.Identity (Identity)
 import Lucid
 
 -- Define the layout of the HTML.
-layout :: Html () -> Html ()
+layout :: Monad m => HtmlT m () -> HtmlT m ()
 layout page = doctypehtml_ $ do
   head_ $ do
     meta_ [charset_ "UTF-8"]

@@ -44,6 +44,7 @@ library
     , cookie
     , http-types
     , lucid
+    , mtl
     , scotty
     , text
   default-language: Haskell2010
@@ -60,6 +61,7 @@ executable my-wedding-app-exe
     , cookie
     , http-types
     , lucid
+    , mtl
     , my-wedding-app
     , scotty
     , text
@@ -78,6 +80,7 @@ test-suite my-wedding-app-test
     , cookie
     , http-types
     , lucid
+    , mtl
     , my-wedding-app
     , scotty
     , text
