@@ -16,7 +16,7 @@ layout page = doctypehtml_ $ do
   body_ $ do
     nav_ [class_ "teal"] $ do
       div_ [class_ "nav-wrapper container"] $ do
-        a_ [href_ "/", class_ "brand-logo"] "Our Wedding"
+        -- a_ [href_ "/", class_ "brand-logo"] "Our Wedding"
         ul_ [class_ "right"] $ do
           li_ $ a_ [href_ "/main"] "Wedding Information"
           li_ $ a_ [href_ "/programme"] "View Programme"

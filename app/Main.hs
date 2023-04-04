@@ -22,7 +22,7 @@ main :: IO ()
 main = scotty 3000 $ do
   middleware $ staticPolicy (noDots >-> addBase "static")
 
-  get "/" $ html $ L.renderText $ Layout.layout loginPage
+  get "/" $ html $ L.renderText loginPage
 
   post "/login" $ do
     password <- param "password" :: ActionM L.Text
@@ -32,15 +32,15 @@ main = scotty 3000 $ do
         redirect "/main"
       else redirect "/failed-login"
 
-  get "/failed-login" $ html $ L.renderText $ Layout.layout failedLoginPage
-  get "/main" $ checkAuth $ html $ L.renderText $ Layout.layout mainPage
-  get "/programme" $ checkAuth $ html $ L.renderText $ Layout.layout mainPage
-  get "/venue" $ checkAuth $ html $ L.renderText $ Layout.layout venuePage
-  get "/accommodation" $ checkAuth $ html $ L.renderText $ Layout.layout accomodationPage
-  get "/gifts" $ checkAuth $ html $ L.renderText $ Layout.layout giftsPage
-  get "/photos" $ checkAuth $ html $ L.renderText $ Layout.layout photoVideoPage
-  get "/guestbook" $ checkAuth $ html $ L.renderText $ Layout.layout guestBookPage
-  get "/transportation" $ checkAuth $ html $ L.renderText $ Layout.layout transportationPage
+  get "/failed-login" $ html $ L.renderText failedLoginPage
+  get "/main" $ checkAuth $ html $ L.renderText mainPage
+  get "/programme" $ checkAuth $ html $ L.renderText mainPage
+  get "/venue" $ checkAuth $ html $ L.renderText venuePage
+  get "/accommodation" $ checkAuth $ html $ L.renderText accomodationPage
+  get "/gifts" $ checkAuth $ html $ L.renderText giftsPage
+  get "/photos" $ checkAuth $ html $ L.renderText photoVideoPage
+  get "/guestbook" $ checkAuth $ html $ L.renderText guestBookPage
+  get "/transportation" $ checkAuth $ html $ L.renderText transportationPage
 
 checkAuth :: ActionM () -> ActionM ()
 checkAuth action = do
