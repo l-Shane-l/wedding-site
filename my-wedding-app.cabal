@@ -32,6 +32,7 @@ library
       LoginPage
       MainPage
       PhotoVideoPage
+      ProgramPage
       TransportationPage
       VenuePage
   other-modules:

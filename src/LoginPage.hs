@@ -18,7 +18,7 @@ loginPage =
           label_ "Password"
       div_ [class_ "row"] $ do
         div_ [class_ "col s12"] $ do
-          button_ [type_ "submit", class_ "waves-effect waves-light btn"] "Login"
+          button_ [type_ "submit", class_ "purple waves-effect waves-light btn"] "Login"
 
 -- | Render the failed login page.
 failedLoginPage :: Html ()
@@ -26,4 +26,4 @@ failedLoginPage =
   Layout.layout $ do
     h1_ "Invalid Login"
     p_ "The login credentials you provided are incorrect. Please try again."
-    a_ [href_ "/login"] "Go back to login page."
+    a_ [href_ "/"] "Go back to login page."

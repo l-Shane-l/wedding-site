@@ -13,6 +13,7 @@ import MainPage (mainPage)
 import Network.HTTP.Types.Status (unauthorized401)
 import Network.Wai.Middleware.Static (addBase, noDots, staticPolicy, (>->))
 import PhotoVideoPage (photoVideoPage)
+import ProgramPage (programPage)
 import System.FilePath ((</>))
 import TransportationPage (transportationPage)
 import VenuePage (venuePage)
@@ -34,7 +35,7 @@ main = scotty 3000 $ do
 
   get "/failed-login" $ html $ L.renderText failedLoginPage
   get "/main" $ checkAuth $ html $ L.renderText mainPage
-  get "/programme" $ checkAuth $ html $ L.renderText mainPage
+  get "/program" $ checkAuth $ html $ L.renderText programPage
   get "/venue" $ checkAuth $ html $ L.renderText venuePage
   get "/accommodation" $ checkAuth $ html $ L.renderText accomodationPage
   get "/gifts" $ checkAuth $ html $ L.renderText giftsPage
@@ -49,6 +50,6 @@ checkAuth action = do
     Just cookie ->
       if "password=guest123" `elem` words (L.unpack cookie)
         then action
-        else status unauthorized401 >> text "Unauthorized access."
+        else redirect "/"
     Nothing ->
-      status unauthorized401 >> text "Unauthorized access."
+      redirect "/"
