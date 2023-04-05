@@ -24,9 +24,14 @@ layout page = doctypehtml_ $ do
     title_ "Our Wedding"
     link_ [rel_ "stylesheet", type_ "text/css", href_ "/css/materialize.min.css"]
     link_ [rel_ "stylesheet", type_ "text/css", href_ "https://fonts.googleapis.com/icon?family=Material+Icons"]
+    link_ [rel_ "stylesheet", type_ "text/css", href_ "https://fonts.googleapis.com/css?family=Great+Vibes&display=swap"]
+    style_ $ do
+      "body { font-family: 'Great Vibes', cursive; font-size: 16px; }"
+
   body_ [onload_ "initSidenav();"] $ do
     nav_ [class_ "purple"] $ do
       div_ [class_ "nav-wrapper container"] $ do
+        a_ [href_ "/", class_ "brand-logo"] "Sandra & Shane's Wedding"
         a_ [href_ "#mobile-nav", class_ "sidenav-trigger", data_ "target" "mobile-nav"] $
           i_ [class_ "material-icons"] "menu"
         ul_ [class_ "right hide-on-med-and-down"] menuItems

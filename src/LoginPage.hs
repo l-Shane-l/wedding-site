@@ -14,8 +14,8 @@ loginPage =
     form_ [method_ "post", action_ "/login", class_ "col s12"] $ do
       div_ [class_ "row"] $ do
         div_ [class_ "input-field col s12"] $ do
-          input_ [type_ "password", name_ "password", class_ "validate"]
-          label_ "Password"
+          input_ [type_ "password", name_ "password", id_ "password-input", class_ "validate"]
+          label_ [for_ "password-input"] "Password"
       div_ [class_ "row"] $ do
         div_ [class_ "col s12"] $ do
           button_ [type_ "submit", class_ "purple waves-effect waves-light btn"] "Login"
