@@ -1,0 +1,48 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+a {
+    font-size: 64px;
+}
+
+.nav-wrapper .brand-logo {
+    font-size: 32px;
+}
+
+.nav-wrapper ul li a {
+    font-size: 20px;
+}
+
+p {
+    font-size: 32px;
+}
+
+@media screen and (max-width: 1500px) {
+    .nav-wrapper {
+        padding-left: 50px;
+        /* add some padding to the left */
+    }
+
+
+
+    .brand-logo {
+        margin-left: 10px;
+        /* move the logo to the right */
+    }
+
+    .right.hide-on-med-and-down {
+        display: none;
+        /* hide the desktop menu */
+    }
+
+    #mobile-nav {
+        display: block;
+        /* show the mobile menu */
+    }
+}

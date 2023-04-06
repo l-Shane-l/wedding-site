@@ -25,17 +25,18 @@ layout page = doctypehtml_ $ do
     link_ [rel_ "stylesheet", type_ "text/css", href_ "/css/materialize.min.css"]
     link_ [rel_ "stylesheet", type_ "text/css", href_ "https://fonts.googleapis.com/icon?family=Material+Icons"]
     link_ [rel_ "stylesheet", type_ "text/css", href_ "https://fonts.googleapis.com/css?family=Great+Vibes&display=swap"]
+    link_ [rel_ "stylesheet", type_ "text/css", href_ "/css/style.css"]
     style_ $ do
-      "body { font-family: 'Great Vibes', cursive; font-size: 16px; }"
+      "body { font-family: 'Great Vibes', cursive; }"
 
   body_ [onload_ "initSidenav();"] $ do
     nav_ [class_ "purple"] $ do
-      div_ [class_ "nav-wrapper container"] $ do
-        a_ [href_ "/", class_ "brand-logo"] "Sandra & Shane's Wedding"
+      div_ [class_ "nav-wrapper"] $ do
+        a_ [href_ "/", class_ "brand-logo", style_ "padding-left: 10px;"] "Sandra & Shane's Wedding"
         a_ [href_ "#mobile-nav", class_ "sidenav-trigger", data_ "target" "mobile-nav"] $
           i_ [class_ "material-icons"] "menu"
         ul_ [class_ "right hide-on-med-and-down"] menuItems
     ul_ [id_ "mobile-nav", class_ "sidenav"] menuItems
     div_ [class_ "container"] page
     script_ [src_ "/js/materialize.min.js"] ("" :: String)
-    script_ "function initSidenav() { var elems = document.querySelectorAll('.sidenav'); var instances = M.Sidenav.init(elems); }"
+    script_ [src_ "/js/my.js"] ("" :: String)
