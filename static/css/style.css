@@ -8,7 +8,7 @@ ul,
 ol,
 li,
 a {
-    font-size: 64px;
+    font-size: 32px;
 }
 
 .nav-wrapper .brand-logo {
@@ -20,7 +20,7 @@ a {
 }
 
 p {
-    font-size: 32px;
+    font-size: 24px;
 }
 
 @media screen and (max-width: 1500px) {

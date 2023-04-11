@@ -26,6 +26,7 @@ layout page = doctypehtml_ $ do
     link_ [rel_ "stylesheet", type_ "text/css", href_ "https://fonts.googleapis.com/icon?family=Material+Icons"]
     link_ [rel_ "stylesheet", type_ "text/css", href_ "https://fonts.googleapis.com/css?family=Great+Vibes&display=swap"]
     link_ [rel_ "stylesheet", type_ "text/css", href_ "/css/style.css"]
+    link_ [rel_ "icon", href_ "/img/diamond-ring.ico", type_ "image/x-icon"]
     style_ $ do
       "body { font-family: 'Great Vibes', cursive; }"
 
